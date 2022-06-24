@@ -4,7 +4,7 @@
   "description": "Rooftop Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node index.ts",
+    "start": "npx ts-node index.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/fkmurphy/rooftop-challenge#readme",
   "devDependencies": {
+    "@types/node": "^18.0.0",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.6"
   }
 }

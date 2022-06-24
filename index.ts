@@ -1,3 +1,6 @@
+import ChallengeService from './services/ChallengeService';
+import BlocksRepositoryAPI from './repositories/BlocksRepositoryAPI';
+
 let tests = [
   [
     ["f319", "3720", "4e3e", "46ec", "c7df", "c1c7", "80fd", "c4ea"],
@@ -62,6 +65,8 @@ function check(blocks: Array<string> = [], token: string = '') {
 }
 
 let indexValueToExpected = 0;
+let service = new ChallengeService(new BlocksRepositoryAPI());
+service.getBlocks()
 tests.forEach((value, index) => {
   indexValueToExpected = index;
   let result = check(value[0], "b93ac073-eae4-405d-b4ef-bb82e0036a1d");
@@ -69,7 +74,7 @@ tests.forEach((value, index) => {
     console.log("Lo resolviste correctamente!");
   } else {
     console.log("Todava puedes intentarlo!");
-    throw 'No result√≥' ;
+    throw 'No resultó' ;
   }
   console.log(result);
 });
