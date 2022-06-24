@@ -59,7 +59,6 @@ function check(blocks = [], token = '') {
   })
 
   return blocks;
-  //return ["f319", "46ec", "c1c7", "3720", "c7df", "c4ea", "4e3e", "80fd"];
 }
 
 let indexValueToExpected = 0;
