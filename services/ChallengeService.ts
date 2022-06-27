@@ -2,7 +2,6 @@ import {BlocksRepository} from '../repositories/BlocksRepository';
 import endpoint from '../endpoints.config';
 
 export default class ChallengeService {
-  readonly TOKEN: string = endpoint.ApiToken;
 
   constructor(private readonly repo: BlocksRepository) {}
 
