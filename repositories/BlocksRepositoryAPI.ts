@@ -18,13 +18,13 @@ export default class BlocksRepositoryAPI implements BlocksRepository {
       })
   }
 
-  async getBlocks(token: string): Promise<[]> {
+  async getBlocks(token: string): Promise<string[]> {
     return fetch(`${this.BASE_URL}/blocks?token=${token}`)
       .then((response:any) => {
         if(!response.ok) {
           throw new Error('');
         }
-        return response.json() as Promise<[]>;
+        return response.json() as Promise<string[]>;
       }).then((response: any) => {
         return response.data;
       });

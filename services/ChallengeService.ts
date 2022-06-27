@@ -39,17 +39,13 @@ export default class ChallengeService {
 
   }
 
-  async execute(): Promise<void> {
+  async execute(): Promise<string[]> {
+    console.log('Email: ' , endpoint.email);
     let token: string = await this.repo.getToken();
     let blocks:string[] = await this.repo.getBlocks(token);
-    console.log('Email: ' , endpoint.email);
     console.log('Los bloques a ordenar son:');
     console.log(blocks);
     console.log('Aguarde un momento...');
-    let sortedBlocks: string[] = await this.check(blocks, token);
-    console.log('Respuesta:');
-    console.log(sortedBlocks);
-
-
+    return await this.check(blocks, token);
   }
 }

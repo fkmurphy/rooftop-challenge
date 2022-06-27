@@ -36,4 +36,6 @@ let tests = [
 
 let indexValueToExpected = 0;
 let service = new ChallengeService(new BlocksRepositoryAPI());
-let response = service.execute();
+let sortedBlocks = service.execute();
+console.log('Respuesta:');
+console.log(sortedBlocks);
