@@ -1,24 +1,50 @@
 import {BlocksRepository} from './BlocksRepository';
 import endpoint from '../endpoints.config';
-import { RequestInfo, RequestInit } from 'node-fetch';
+//import { RequestInfo, RequestInit } from 'node-fetch';
 
 export default class BlocksRepositoryAPI implements BlocksRepository {
   readonly BASE_URL: string = endpoint.UrlBase;
-  readonly TOKEN: string = endpoint.ApiToken;
-  //readonly fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-  //
+  readonly EMAIL: string = endpoint.email;
 
-  async getBlocks(): Promise<[]> {
-  const fetch = (url: RequestInfo, init?: RequestInit) =>
-    import('node-fetch').then(({ default: fetch }) => fetch(url, init));
+  async getToken(): Promise<string> {
+    return fetch(`${this.BASE_URL}/token?email=${this.EMAIL}`)
+      .then((response: any) => {
+        if(!response.ok) {
+          throw new Error('');
+        }
+        return response.json() as Promise<string>
+      }).then((data: any) => {
+        return data.token;
+      })
+  }
 
-    return fetch(`${this.BASE_URL}/blocks?token=${this.TOKEN}`)
+  async getBlocks(token: string): Promise<[]> {
+    return fetch(`${this.BASE_URL}/blocks?token=${token}`)
       .then((response:any) => {
-        console.log('show response', response)
         if(!response.ok) {
           throw new Error('');
         }
         return response.json() as Promise<[]>;
+      }).then((response: any) => {
+        return response.data;
       });
+  }
+
+  async areSequential(blockOne: string, blockTwo: string, token: string): Promise<boolean> {
+    return fetch(`${this.BASE_URL}/check?token=${token}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ blocks: [blockOne, blockTwo] }) 
+      })
+      .then((response:any) => {
+        if(!response.ok) {
+          throw new Error('');
+        }
+        return response.json() as Promise<Boolean>;
+      }).then((response:any) => {
+        return response.message
+      }).catch((e: any) => console.log('error', e));
   }
 }
