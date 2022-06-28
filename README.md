@@ -35,7 +35,7 @@ npm start
 ### Nota adjunta
 Una observación interesante es que sin contar la obtención del token y los bloques, la fórmula para calcular la cantidad de peticiones realizadas a la API en el peor de los casos es:
 
-$$ Peticiones = {x * (x-1) \over 2}  \forall x \ge 3 \text{, x cantidad de elemetnos}$$
+$$ Peticiones = {x * (x-1) \over 2}  \forall x \ge 3 \text{, x cantidad de elementos}$$
 
 Por ejemplo:
 - Para 7 elementos, la cantidad de peticiones 21.
