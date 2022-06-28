@@ -31,13 +31,6 @@ _Nota:_ el email determinado se utilizará para obtener el token y realizar las 
 npm start
 ```
 
-### Test
-Para ejecutar los test:
-```bash
-npm test
-``` 
-
-
 ### Nota adjunta
 Una observación interesante es que sin contar la obtención del token y los bloques, la fórmula para calcular la cantidad de peticiones realizadas a la API en el peor de los casos es:
 
@@ -52,3 +45,11 @@ La gráfica será:
 ![Función que representa la cantidad de peticiones x elementos](https://github.com/fkmurphy/rooftop-challenge/blob/main/funcion_peticiones.jpeg)
 
 Por cierto, es la primera vez que trabajo con Typescript, fue una buena experiencia.
+
+### Ejecución de test
+Para ejecutar los test:
+```bash
+npm test
+``` 
+
+
