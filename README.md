@@ -37,9 +37,12 @@ Una observación interesante es que sin contar la obtención del token y los blo
 
 $$ Peticiones = {x * (x-1) \over 2}  \forall x \ge 3 \text{, x cantidad de elemetnos}$$
 
-Por ejemplo: para 7 elementos, la cantidad de peticiones 21.
+Por ejemplo:
+- Para 7 elementos, la cantidad de peticiones 21.
+- Para 1 y 2 elementos, la lista de bloques se considera ordenada ya que el enunciado menciona que el primero siempre está ordenado.
 
-En mi opinión no es performante. Podría reducirse en `1` (constante) si se considera que no es necesario ordenar el último item ya que si se ordenaron los previos, este último se encuentra en el lugar correcto.
+En mi opinión no es eficiente.
+Podría reducirse en `1` (constante) si se considera que no es necesario ordenar el último item ya que si se ordenaron los previos, este último se encuentra en el lugar correcto.
 
 La gráfica será:
 
