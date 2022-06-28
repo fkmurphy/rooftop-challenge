@@ -1,4 +1,4 @@
-# rooftop-challenge
+# Rooftop Career Switch - Challenge (28 Junio 08:00 -03:00)
 
 El challenge fue realizado en typescript y para ejecutarlo en un ambiente, se utilizó nodeJs.
 
