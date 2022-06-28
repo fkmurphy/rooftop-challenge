@@ -15,6 +15,8 @@ export default class BlocksRepositoryAPI implements BlocksRepository {
         return response.json() as Promise<string>
       }).then((data: any) => {
         return data.token;
+      }).catch(e => {
+        throw e;
       })
   }
 
@@ -27,6 +29,8 @@ export default class BlocksRepositoryAPI implements BlocksRepository {
         return response.json() as Promise<string[]>;
       }).then((response: any) => {
         return response.data;
+      }).catch(e => {
+        throw e;
       });
   }
 
@@ -40,11 +44,13 @@ export default class BlocksRepositoryAPI implements BlocksRepository {
       })
       .then((response:any) => {
         if(!response.ok) {
-          throw new Error('');
+          throw new Error('Not found');
         }
         return response.json() as Promise<Boolean>;
       }).then((response:any) => {
         return response.message
-      }).catch((e: any) => console.log('error', e));
+      }).catch((e: any) => {
+        throw e;
+      });
   }
 }

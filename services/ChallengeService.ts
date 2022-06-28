@@ -24,7 +24,7 @@ export default class ChallengeService {
     }
 
     let index: number = 0;
-    while (index < blocksCount){
+    while (index < blocksCount-1){
       let nextIndexBlock:any = await this.findNext(blocks[index], index, blocks, token);
       if (nextIndexBlock > 0) {
         let valueNext = blocks[nextIndexBlock];

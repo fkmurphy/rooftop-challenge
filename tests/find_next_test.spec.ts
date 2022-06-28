@@ -1,7 +1,7 @@
 import ChallengeService from '../services/ChallengeService'
 import BlocksRepositoryMock from './BlocksRepositoryMock'
 
-it('test complete execute service with three cases - success', async () => {
+it('test complete execute service with three elements - success', async () => {
   const sortedBlocks = ['a', 'b', 'c'];
   const mock = new BlocksRepositoryMock(['a', 'c', 'b'], sortedBlocks);
   const service = new ChallengeService(mock);
@@ -10,18 +10,7 @@ it('test complete execute service with three cases - success', async () => {
   expect(response).toEqual(sortedBlocks);
 });
 
-it('test complete execute service with two cases - success', async () => {
-  // si el primero está ordenado, entonces el segundo no tiene otra posición
-  // para tomar
-  const sortedBlocks = ['a', 'c'];
-  const mock = new BlocksRepositoryMock(['a', 'c'], sortedBlocks);
-  const service = new ChallengeService(mock);
-  let response = await service.execute()
-
-  expect(response).toEqual(sortedBlocks);
-});
-
-it('findNext', async () => {
+it('test findNext', async () => {
   const sortedBlocks = ['a', 'b', 'c'];
   const mock = new BlocksRepositoryMock(['a', 'c', 'b'], sortedBlocks);
   const service = new ChallengeService(mock);
@@ -36,7 +25,7 @@ it('findNext', async () => {
   expect(nextPosition).toEqual(2);
 });
 
-describe('Mutliples cases', () => {
+describe('Mutliples cases - success', () => {
 
   let tests = [
     [

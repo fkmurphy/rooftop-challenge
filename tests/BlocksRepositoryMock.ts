@@ -1,7 +1,10 @@
 import {BlocksRepository} from '../repositories/BlocksRepository';
 
 export default class BlocksRepositoryMock implements BlocksRepository {
-  constructor(private readonly blocks: string[], private readonly sortedBlocks: string[]) {}
+  constructor(
+    private readonly blocks: string[],
+    private readonly sortedBlocks: string[]
+  ) {}
 
   getToken(): Promise<string>{
     return Promise.resolve('');
@@ -12,7 +15,6 @@ export default class BlocksRepositoryMock implements BlocksRepository {
   }
 
   areSequential(blockOne: string, blockTwo: string, token: string): Promise<Boolean> {
-    console.log('llame a seq');
     return Promise.resolve(this.sortedBlocks.indexOf(blockOne) + 1 === this.sortedBlocks.indexOf(blockTwo));
   }
 
