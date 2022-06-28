@@ -1,5 +1,4 @@
-
-
+// Este es un script de prueba en los primeros intentos
 "use strict";
 let tests = [
     [
