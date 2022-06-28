@@ -12,6 +12,7 @@ export default class BlocksRepositoryMock implements BlocksRepository {
   }
 
   areSequential(blockOne: string, blockTwo: string, token: string): Promise<Boolean> {
+    console.log('llame a seq');
     return Promise.resolve(this.sortedBlocks.indexOf(blockOne) + 1 === this.sortedBlocks.indexOf(blockTwo));
   }
 

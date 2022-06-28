@@ -1,9 +1,20 @@
 import ChallengeService from '../services/ChallengeService'
 import BlocksRepositoryMock from './BlocksRepositoryMock'
 
-it('verify service execute success', async () => {
+it('test complete execute service with three cases - success', async () => {
   const sortedBlocks = ['a', 'b', 'c'];
   const mock = new BlocksRepositoryMock(['a', 'c', 'b'], sortedBlocks);
+  const service = new ChallengeService(mock);
+  let response = await service.execute()
+
+  expect(response).toEqual(sortedBlocks);
+});
+
+it('test complete execute service with two cases - success', async () => {
+  // si el primero está ordenado, entonces el segundo no tiene otra posición
+  // para tomar
+  const sortedBlocks = ['a', 'c'];
+  const mock = new BlocksRepositoryMock(['a', 'c'], sortedBlocks);
   const service = new ChallengeService(mock);
   let response = await service.execute()
 
