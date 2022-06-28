@@ -13,8 +13,6 @@ Autor: Murphy Nestor Julian
 2. Instalar con npm
   - Version node-js `18.4.0` 
   - Version npm `8.12.1` 
-
-  Ejecutar
   ```bash
   npm install
   ```
