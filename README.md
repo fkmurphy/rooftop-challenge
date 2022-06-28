@@ -1,6 +1,8 @@
-# Rooftop Career Switch - Challenge (28 Junio 08:00 -03:00)
+# Career Switch - Rooftop Academy Challenge (28 Junio 08:00 -03:00)
 
 El challenge fue realizado en typescript y para ejecutarlo en un ambiente, se utilizó nodeJs.
+
+Autor: Murphy Nestor Julian
 
 ### Instalación
 1. Clonar el repositorio:
